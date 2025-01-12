@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 修改默认IP
-sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
 
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
@@ -29,7 +29,7 @@ function git_sparse_clone() {
 
 # 科学上网插件
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
-git_sparse_clonehttps://github.com/morytyann/OpenWrt-mihomo.git
+git_sparse_clone main https://github.com/morytyann/OpenWrt-mihomo.git luci-app-mihomo
 git clone https://github.com/Thaolga/luci-app-nekoclash  package/luci-app-nekoclash
 
 # 更换golong 1.23
